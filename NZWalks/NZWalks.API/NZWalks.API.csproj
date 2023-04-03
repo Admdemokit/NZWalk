@@ -21,6 +21,8 @@
     <None Remove="Services\Interfaces\IRegions\IRegionRepositories.cs~RF2ccdc1d.TMP" />
     <None Remove="Services\Interfaces\IRegions\IRegionRepositories.cs~RF2d1e972.TMP" />
     <None Remove="Services\Interfaces\IRegions\IRegionRepositories.cs~RF2d9f2c2.TMP" />
+    <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RF54d5a018.TMP" />
+    <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RF54ecbe9d.TMP" />
     <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RF8dc371.TMP" />
     <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RFa4abd78.TMP" />
     <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RFa5916a0.TMP" />
