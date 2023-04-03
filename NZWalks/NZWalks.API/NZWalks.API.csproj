@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\RegionControllers\RegionController.cs~RF2ded43cd.TMP" />
+    <None Remove="Controllers\RegionControllers\RegionController.cs~RF2e050de3.TMP" />
+    <None Remove="Controllers\RegionControllers\RegionController.cs~RF410ef7.TMP" />
+    <None Remove="Mappings\AutoMapperProfile.cs~RF47962c.TMP" />
+    <None Remove="Mappings\AutoMapperProfile.cs~RF72a51f.TMP" />
+    <None Remove="Mappings\AutoMapperProfile.cs~RF7f19a8.TMP" />
+    <None Remove="Models\DTO\DTORegion\UpdateRegionRequestDto.cs~RFa6dc4c1.TMP" />
+    <None Remove="Models\DTO\DTOWalk\AddWalkRequestDto.cs~RFa7144cf.TMP" />
+    <None Remove="Models\DTO\DTOWalk\UpdateWalkRequestDto.cs~RFa475dc2.TMP" />
+    <None Remove="Models\DTO\DTOWalk\UpdateWalkRequestDto.cs~RFa73584e.TMP" />
+    <None Remove="Services\Interfaces\IRegions\IRegionRepositories.cs~RF2c9bcfa.TMP" />
+    <None Remove="Services\Interfaces\IRegions\IRegionRepositories.cs~RF2ccdc1d.TMP" />
+    <None Remove="Services\Interfaces\IRegions\IRegionRepositories.cs~RF2d1e972.TMP" />
+    <None Remove="Services\Interfaces\IRegions\IRegionRepositories.cs~RF2d9f2c2.TMP" />
+    <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RF8dc371.TMP" />
+    <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RFa4abd78.TMP" />
+    <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RFa5916a0.TMP" />
+    <None Remove="Services\Interfaces\Iwalks\IWalksRepositories.cs~RFaa7a6af.TMP" />
+    <None Remove="Services\Repositoreis\RegionRepos\RegionRepositories.cs~RF2ad2c3c.TMP" />
+    <None Remove="Services\Repositoreis\RegionRepos\RegionRepositories.cs~RF2ae2be9.TMP" />
+    <None Remove="Services\Repositoreis\RegionRepos\RegionRepositories.cs~RF2cde8ca.TMP" />
+    <None Remove="Services\Repositoreis\WalkRepos\WalksRepositories.cs~RF77e28d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+</Project>
