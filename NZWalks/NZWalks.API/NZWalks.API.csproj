@@ -7,9 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="appsettings.json~RF1260db4c.TMP" />
+    <None Remove="appsettings.json~RF550ecb98.TMP" />
+    <None Remove="Controllers\AuthControllers\AuthController.cs~RF57df82b5.TMP" />
+    <None Remove="Controllers\AuthControllers\AuthController.cs~RF57e35642.TMP" />
     <None Remove="Controllers\RegionControllers\RegionController.cs~RF2ded43cd.TMP" />
     <None Remove="Controllers\RegionControllers\RegionController.cs~RF2e050de3.TMP" />
     <None Remove="Controllers\RegionControllers\RegionController.cs~RF410ef7.TMP" />
+    <None Remove="Data\NZWalkAuthDbContext.cs~RF126a68da.TMP" />
     <None Remove="Mappings\AutoMapperProfile.cs~RF47962c.TMP" />
     <None Remove="Mappings\AutoMapperProfile.cs~RF72a51f.TMP" />
     <None Remove="Mappings\AutoMapperProfile.cs~RF7f19a8.TMP" />
@@ -36,14 +41,18 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.28.1" />
     <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.28.1" />
   </ItemGroup>
 
 </Project>

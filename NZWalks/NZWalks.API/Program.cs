@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NZWalks.API.Data;
 using NZWalks.API.Mappings;
@@ -6,6 +9,7 @@ using NZWalks.API.Services.Interfaces.IRegions;
 using NZWalks.API.Services.Interfaces.Iwalks;
 using NZWalks.API.Services.Repositoreis.RegionRepos;
 using NZWalks.API.Services.Repositoreis.WalkRepos;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,13 +28,53 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+// Injected ZNWalkDbContext
+
 builder.Services.AddDbContext<NZWalksDbContext>(options =>
                 options.UseMySQL(builder.Configuration.GetConnectionString("NZWalkConnectionString")));
+
+// Injected AuthDbContext
+builder.Services.AddDbContext<NZWalkAuthDbContext>(options =>
+                 options.UseMySQL(builder.Configuration.GetConnectionString("NZWalkAuthConnectionString")));
 
 builder.Services.AddScoped<IRegionRepositories, RegionRepositories>();
 builder.Services.AddScoped<IWalksRepositories, WalksRepositories>();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+// Setup Identity To DB
+builder.Services.AddIdentityCore<IdentityUser>()
+            .AddRoles<IdentityRole>()
+            .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("NZWalk")
+            .AddEntityFrameworkStores<NZWalkAuthDbContext>()
+            .AddDefaultTokenProviders();
+
+// Setting Up For Password Login
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+});
+
+
+// Setting JWT Token From AppSetting.Json
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes
+            (builder.Configuration["Jwt:Key"]))
+        });
 
 var app = builder.Build();
 
@@ -46,6 +90,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
