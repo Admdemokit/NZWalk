@@ -6,8 +6,10 @@ using Microsoft.OpenApi.Models;
 using NZWalks.API.Data;
 using NZWalks.API.Mappings;
 using NZWalks.API.Services.Interfaces.IRegions;
+using NZWalks.API.Services.Interfaces.ITokens;
 using NZWalks.API.Services.Interfaces.Iwalks;
 using NZWalks.API.Services.Repositoreis.RegionRepos;
+using NZWalks.API.Services.Repositoreis.TokenRepos;
 using NZWalks.API.Services.Repositoreis.WalkRepos;
 using System.Text;
 
@@ -39,6 +41,9 @@ builder.Services.AddDbContext<NZWalkAuthDbContext>(options =>
 
 builder.Services.AddScoped<IRegionRepositories, RegionRepositories>();
 builder.Services.AddScoped<IWalksRepositories, WalksRepositories>();
+
+// Injected Token Repositories
+builder.Services.AddScoped<ITokenRepositories, TokenRepositories>();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 

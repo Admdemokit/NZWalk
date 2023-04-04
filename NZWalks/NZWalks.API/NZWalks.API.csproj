@@ -35,6 +35,7 @@
     <None Remove="Services\Repositoreis\RegionRepos\RegionRepositories.cs~RF2ad2c3c.TMP" />
     <None Remove="Services\Repositoreis\RegionRepos\RegionRepositories.cs~RF2ae2be9.TMP" />
     <None Remove="Services\Repositoreis\RegionRepos\RegionRepositories.cs~RF2cde8ca.TMP" />
+    <None Remove="Services\Repositoreis\TokenRepos\TokenRepositories.cs~RF58017820.TMP" />
     <None Remove="Services\Repositoreis\WalkRepos\WalksRepositories.cs~RF77e28d.TMP" />
   </ItemGroup>
 
