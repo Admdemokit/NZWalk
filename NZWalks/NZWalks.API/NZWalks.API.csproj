@@ -11,6 +11,7 @@
     <None Remove="appsettings.json~RF550ecb98.TMP" />
     <None Remove="Controllers\AuthControllers\AuthController.cs~RF57df82b5.TMP" />
     <None Remove="Controllers\AuthControllers\AuthController.cs~RF57e35642.TMP" />
+    <None Remove="Controllers\ImageControllers\ImagesController.cs~RF1a119a90.TMP" />
     <None Remove="Controllers\RegionControllers\RegionController.cs~RF2ded43cd.TMP" />
     <None Remove="Controllers\RegionControllers\RegionController.cs~RF2e050de3.TMP" />
     <None Remove="Controllers\RegionControllers\RegionController.cs~RF410ef7.TMP" />
@@ -18,6 +19,8 @@
     <None Remove="Mappings\AutoMapperProfile.cs~RF47962c.TMP" />
     <None Remove="Mappings\AutoMapperProfile.cs~RF72a51f.TMP" />
     <None Remove="Mappings\AutoMapperProfile.cs~RF7f19a8.TMP" />
+    <None Remove="Models\Domain\Imaging\Imagess.cs~RF1a23bdd0.TMP" />
+    <None Remove="Models\DTO\DTOIMage\ImageUploadRequestDto.cs~RF1a164573.TMP" />
     <None Remove="Models\DTO\DTORegion\UpdateRegionRequestDto.cs~RFa6dc4c1.TMP" />
     <None Remove="Models\DTO\DTOWalk\AddWalkRequestDto.cs~RFa7144cf.TMP" />
     <None Remove="Models\DTO\DTOWalk\UpdateWalkRequestDto.cs~RFa475dc2.TMP" />
@@ -52,8 +55,17 @@
     </PackageReference>
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.28.1" />
     <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Serilog" Version="2.12.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.28.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="Logs\" />
   </ItemGroup>
 
 </Project>
